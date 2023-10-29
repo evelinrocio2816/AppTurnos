@@ -1,0 +1,1 @@
+export const  baseUrl ='https://turnos-medicos-440d5-default-rtdb.firebaseio.com'
