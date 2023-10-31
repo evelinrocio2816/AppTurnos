@@ -3,7 +3,7 @@ import React from "react";
 import { Card } from "../../../../components";
 import styles from "./CategoryItem.styles";
 import { useDispatch } from "react-redux";
-import { setCategorySelected } from "../../../../features/shift/shiftSlice";
+import { setCategorySelected } from "../../../../features/medic/medicSlice";
 
 
 

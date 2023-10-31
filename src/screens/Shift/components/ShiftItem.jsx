@@ -1,17 +1,20 @@
-import {Pressable, Text, View } from 'react-native'
+import {Image, Pressable, Text, View } from 'react-native'
 import { styles } from './ShiftItem.styles'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 
-const ShiftItem = () => {
+const ShiftItem = ({item}) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.name}>Medico: </Text>
+      <Image style={styles.image} source={item.image} />
       </View>
-      <View style={styles.details}>
+      <View>
+        <Text style={styles.name}>Dr/a: {item.nombre} </Text>
+      </View>
+      <View style={styles.details}> 
         <View>
-          
-            <Text>Precio Consulta: $ ***</Text>
+        <Text>{item.quantity}</Text>
+            <Text>Precio Consulta: $ {item.price}</Text>
         </View>
         <Pressable>
             <FontAwesome5 name="trash-alt" size={24} color={'red'} />

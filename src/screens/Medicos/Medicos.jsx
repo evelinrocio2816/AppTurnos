@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Header, SearchInput } from "../../components";
 import styles from "./Medicos.styles";
 import {useSelector} from 'react-redux'
-import { useGetMedicsByCategoryQuery } from "../../services/shiftApi";
+import { useGetMedicsByCategoryQuery } from "../../services/medicApi";
 
 
 const Medicos = ({ navigation}) => {
-  const category = useSelector(state =>state.shift.categorySelected)
+  const category = useSelector(state => state.medic.categorySelected)
   const [arrMedicos, setArrMedicos]=useState([])
   const [keyword, setKeyword] = useState("");
  const {data}=useGetMedicsByCategoryQuery(category)
@@ -16,8 +16,8 @@ const Medicos = ({ navigation}) => {
   console.log(data)
  if(data){
      
-  const medicosFiltered = data.filter(medico => medico.especialidad.includes(keyword))
-  setArrMedicos(medicosFiltered)
+  const medicsFiltered = data.filter(medico => medico.especialidad.includes(keyword))
+  setArrMedicos(medicsFiltered)
  }  
  }, [keyword])
 
@@ -27,7 +27,7 @@ const Medicos = ({ navigation}) => {
       <SearchInput onSearch={setKeyword} />
       <View style={styles.listContainer}>
           <FlatList
-            data={Object.values()}
+            data={arrMedicos}
             renderItem={({ item }) => (
               <TouchableOpacity
                 style={styles.listContainerMedico}

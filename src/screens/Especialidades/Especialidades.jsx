@@ -1,8 +1,7 @@
 import { FlatList, View } from "react-native";
 import { Header } from "../../components";
-import dataCategorys from "../../data/dataCategorys";
 import { CategoryItem } from "./components/CategoryItem";
-import { useGetCategoriesQuery } from "../../services/shiftApi";
+import { useGetCategoriesQuery } from "../../services/medicApi";
 
 
 
@@ -15,7 +14,7 @@ const {data}=useGetCategoriesQuery()
       <View>
     <FlatList
           data={data}
-          keyExtractor={category => category.especialidad}
+          keyExtractor={category => category}
           renderItem={({ item }) => (
             <CategoryItem
             category={item.especialidad}

@@ -5,6 +5,7 @@ import StackNavigator from "./StackNavigator";
 import ShiftNavigator from "./ShiftNavigator";
 import { colors } from "../global/colors";
 import OrdersNavigator from "./OrdersNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 
 const BottonTab = createBottomTabNavigator();
 
@@ -18,9 +19,15 @@ function BottonTabNavigator() {
         tabBarStyle: styles.tabBar,
       }}
     >
+       
       <BottonTab.Screen name="HomeNav" component={StackNavigator} options={{
          tabBarIcon:({focused})=> (
             <FontAwesome5 size={24} name="home" color={focused ? "#fff": colors.color6}/>
+         )
+      }} />
+       <BottonTab.Screen name="ProfileNav" component={ProfileNavigator} options={{
+         tabBarIcon:({focused})=> (
+            <FontAwesome5 size={24} name="user" color={focused ? "#fff": colors.color6}/>
          )
       }} />
       <BottonTab.Screen name="ShiftNav" component={ShiftNavigator}  options={{
@@ -28,7 +35,9 @@ function BottonTabNavigator() {
             <FontAwesome5 size={24} name="user-md" color={focused ? "#fff": colors.color6}/>
          )
       }}
+      
        />
+      
         <BottonTab.Screen name="OrdersNav" component={OrdersNavigator} options={{
          tabBarIcon:({focused})=> (
             <FontAwesome5 size={24} name="address-card" color={focused ? "#fff": colors.color6}/>

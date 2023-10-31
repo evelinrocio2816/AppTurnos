@@ -1,15 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
-import shiftSlice from "../features/shift/shiftSlice";
-import  {shiftApi}  from "../services/shiftApi";
+import { medicApi } from "../services/medicApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { authApi } from "../services/authApi";
+import authSlice from "../features/auth/authSlice";
+import medicSlice from "../features/medic/medicSlice";
+import shiftSlice from "../features/shift/shiftSlice";
+
 
 const store = configureStore({
   reducer: {
+    medic:medicSlice,
     shift: shiftSlice,
-   [shiftApi.reducerPath]:shiftApi.reducer
+    auth: authSlice,
+   [medicApi.reducerPath]:medicApi.reducer,
+   [authApi.reducerPath]: authApi.reducer
   },
   middleware: getDefaultMiddleWare =>
-    getDefaultMiddleWare().concat(shiftApi.middleware),
+    getDefaultMiddleWare().concat(medicApi.middleware,authApi.middleware),
 });
 setupListeners(store.dispatch)
 

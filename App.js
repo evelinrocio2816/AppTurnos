@@ -1,10 +1,10 @@
 import { useFonts } from "expo-font";
 import fonts from "./src/global/fonts";
 import { NavigationContainer } from "@react-navigation/native";
-import BottonTabNavigator from "./src/Navigation/BottonTabNavigator";
+import MainNavigator from "./src/Navigation/MainNavigator";
 import { Provider } from "react-redux";
-import store from "./src/store"
-
+import store from "./src/store";
+import { Profile } from "./src/screens";
 
 
 const App = () => {
@@ -15,10 +15,11 @@ const App = () => {
   }
   return (
    <Provider store={store}>
-      <NavigationContainer>
-        <BottonTabNavigator />
-      </NavigationContainer>
-</Provider>
+     <NavigationContainer>
+      <MainNavigator/>
+     </NavigationContainer>
+   </Provider>
+  
   );
 };
 

@@ -12,9 +12,13 @@ export const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor:colors.color1,
+    backgroundColor:colors.color5,
   },
   flatlist:{
     margin:20,
+  },
+  cameraButton:{
+    width:200,
+    backgroundColor:colors.color1,
   }
 });
