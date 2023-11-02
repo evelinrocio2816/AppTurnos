@@ -7,10 +7,10 @@ import { useGetProfileImageQuery } from '../services/medicApi'
 import { setCameraImage } from '../features/auth/authSlice'
 
 const MainNavigator = () => {
-   // const [user, setUser]=useState(null)
+  
    const {user, localId}=useSelector(state =>state.auth)
    const dispatch=useDispatch()
-   const {data,error, isLoading}=useGetProfileImageQuery()
+   const {data,error, isLoading}=useGetProfileImageQuery(localId)
 
    useEffect(() => {
      if (data) {

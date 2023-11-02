@@ -6,7 +6,7 @@ import { setCameraImage } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { usePostProfileImageMutation } from "../../services/medicApi";
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const image = useSelector(state => state.auth.imageCamera);
   const { localId } = useSelector(state => state.auth)
   const [triggerSaveProfileImage, result] = usePostProfileImageMutation()
@@ -75,6 +75,12 @@ const Profile = () => {
         <Pressable style={styles.cameraButton} onPress={confirmImage}>
           <Text>Confirm</Text>
         </Pressable>
+        <Pressable
+        style={{ ...styles.cameraButton, marginTop: 20 }}
+        onPress={() => navigation.navigate('Location')}
+      >
+        <Text>Ir a mi ubiacion</Text>
+      </Pressable>
       </ImageBackground>
     </>
   );

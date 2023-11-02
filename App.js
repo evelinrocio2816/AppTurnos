@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "./src/Navigation/MainNavigator";
 import { Provider } from "react-redux";
 import store from "./src/store";
-import { Profile } from "./src/screens";
+
 
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
       <MainNavigator/>
      </NavigationContainer>
    </Provider>
+ 
   
   );
 };

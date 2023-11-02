@@ -7,6 +7,7 @@ import Orders from "./Orders/Orders";
 import Login from "./Login/Login";
 import SignUp from "./SignUp/SignUp";
 import Profile from "./Profile/Profile";
+import Location from "./Location/Location";
 
 export {
   Details,
@@ -18,4 +19,5 @@ export {
   Login,
   SignUp,
   Profile,
+  Location,
 };
