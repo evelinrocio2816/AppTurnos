@@ -29,12 +29,14 @@ triggerPost({total, shift, user:'LoggedUser'})
          keyExtractor={item=> item.id}
         renderItem={renderItem}/>
       </View>
+      
       <View style={styles.containerConfirm} >
-        <Pressable onPress={confirtShift}  >
-            <Text  >Confirm</Text>
-            <View>
+      <View>
                 <Text >{`Total: $${total}`}</Text>
             </View>
+        <Pressable onPress={confirtShift}  >
+            <Text  >Confirm Turno</Text>
+            
         </Pressable>
      
       </View>

@@ -1,3 +1,4 @@
+
 import {
   ImageBackground,
   Pressable,
@@ -12,25 +13,28 @@ import { useSignUpMutation } from "../../services/authApi";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/auth/authSlice";
 
+
 const SignUp = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  const [triggerSignup, result] = useSignUpMutation();
+  const [triggerSignup] = useSignUpMutation();
   const dispatch = useDispatch();
 
   const onSubmit = () => {
-    console.log(email, password, confirmPass);
+    console.log('Login button')
     triggerSignup({
       email,
       password,
-    });
-    console.log(result);
-    if(result.isSuccess){
-      dispatch(setUser(result))
+    })
+      .unwrap()
+      .then( result => {
+        console.log( result)
+        dispatch(setUser( result))
+      })
+      .catch(err => console.log(err))
+  
     }
-  };
-
   return (
     <>
       <ImageBackground
