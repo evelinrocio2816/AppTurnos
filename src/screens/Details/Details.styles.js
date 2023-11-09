@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../global/colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -24,4 +25,14 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     color: "green",
   },
+  btnConfirm:{
+    marginTop: 25,
+    width:200,
+    height:50,
+    backgroundColor: colors.color5,
+   paddingHorizontal:45,
+   paddingVertical:15,
+   borderRadius:20,
+   fontFamily:'Raleway'
+  }
 });

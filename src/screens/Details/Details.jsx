@@ -24,7 +24,7 @@ const Details = ({ route}) => {
         </Text>
   <Text style={styles.price}>Consulta: {`$ ${medicos.price}`} </Text>
   <Pressable onPress={handleAddShift}>
-    <Text>Confirm Shift</Text>
+    <Text style={styles.btnConfirm}>Confirm Shift</Text>
   </Pressable>
       </View>
     </>
