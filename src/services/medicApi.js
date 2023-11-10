@@ -15,9 +15,12 @@ export const medicApi = createApi({
       query: category =>
         `medics.json?orderBy="category"&eqaulTo="${category}"`,
     }),
+    getOrders: builder.query({
+      query: () => `order.json`,
+    }),
     postOrder:builder.mutation({
       query:({...order})=>({
-        url: 'order.json',
+        url: 'orders.json',
         method:'POST',
         body:order,
       })
@@ -43,4 +46,5 @@ export const {
   useGetMedicsQuery,
   useGetMedicsByCategoryQuery,
   usePostOrderMutation,
+  useGetOrdersQuery,
 } = medicApi;

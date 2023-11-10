@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
         justifyContent:'center'
     },
     imagenProfile:{
+    
+        justifyContent:'center',
         width:200,
         height:200,
         marginHorizontal:'30%',

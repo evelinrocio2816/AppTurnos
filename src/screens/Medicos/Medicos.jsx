@@ -19,7 +19,7 @@ const Medicos = ({ navigation}) => {
   const medicsFiltered = data.filter(medico => medico.especialidad.includes(keyword))
   setArrMedicos(medicsFiltered)
  }  
- }, [keyword])
+ }, [keyword,data])
 
   return (
     <View style={styles.container}>

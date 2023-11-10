@@ -1,4 +1,4 @@
-import { FlatList, ImageBackground, Pressable, Text, View } from 'react-native'
+import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from './Shift.styles'
 import { Header } from '../../components'
 import dataShift from '../../data/dataShift'
@@ -11,7 +11,7 @@ const Shift = () => {
 
   const shift = useSelector(state=> state.shift.items)
   const total = useSelector(state =>state.shift.total)
-  const [triggerPost,result]=usePostOrderMutation()
+  const [triggerPost]=usePostOrderMutation()
    
 const confirtShift = ()=>{
 triggerPost({total, shift, user:'LoggedUser'})
@@ -34,10 +34,10 @@ triggerPost({total, shift, user:'LoggedUser'})
       <View>
                 <Text >{`Total: $${total}`}</Text>
             </View>
-        <Pressable onPress={confirtShift}  >
+        <TouchableOpacity onPress={confirtShift}  >
             <Text  >Confirm Turno</Text>
             
-        </Pressable>
+        </TouchableOpacity>
      
       </View>
         </ImageBackground>
